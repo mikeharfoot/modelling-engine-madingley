@@ -1,0 +1,946 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Madingley.Environment</name>
+    </assembly>
+    <members>
+        <member name="T:Madingley.EnviroData">
+            <summary>
+            Imports environmental data from ASCII and NetCDF files
+            </summary>
+            <todoT>No error-trapping as yet</todoT>
+            <todoT>Rewrite to use the ArraySDSConvert class</todoT>
+            <todoD>Need  to go through code and rewrite e.g. change method to overloaded to prevent passing variable name and file name for ESRI grids</todoD>
+            <remarks>Currently assumes that cells are evenly spaced in latitude and longitude</remarks>
+        </member>
+        <member name="F:Madingley.EnviroData._NumLats">
+            <summary>
+            Number of latitudinal cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._NumLons">
+            <summary>
+            Number of longitudinal cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._NumTimes">
+            <summary>
+            Number of time intervals encompassed by the environmental variable
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._LatMin">
+            <summary>
+            Latitude of the bottom edge of the sothernmost grid cell
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._LonMin">
+            <summary>
+            Latitude of the left edge of the most western grid cell
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._MissingValue">
+            <summary>
+            Value used to denote missing data for this environmental variable
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._LatStep">
+            <summary>
+            Latitudinal distance between adjacent cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._LonStep">
+            <summary>
+            Longitudinal distance between adjacent cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._DataArray">
+            <summary>
+            List of arrays of values of the environmental variable
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._Lats">
+            <summary>
+            Vector of latitudes of the bottom edges of grid cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._Lons">
+            <summary>
+            Vector of longitudes of the left edges of grid cells
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._Times">
+            <summary>
+            Vector containing values of the time dimension of the environmental variable
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._ReadFileString">
+            <summary>
+            The string required to read the file with the environmental data
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._Units">
+            <summary>
+            The units of the environmental variable
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData._NumEnviroLayers">
+            <summary>
+            Tracks the number of environmental data layers opened
+            </summary>
+        </member>
+        <member name="F:Madingley.EnviroData.Utilities">
+            <summary>
+            Instance of the class to perform general functions
+            </summary>
+        </member>
+        <member name="M:Madingley.EnviroData.#ctor(System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,Microsoft.Research.Science.Data.EnvironmentalDataSource)">
+            <summary>
+            Overloaded constructor to fetch climate information from the cloud using FetchClimate
+            </summary>
+            <param name="dataName">Name of the the climate variable to be fetched</param>
+            <param name="dataResolution">Time resolution requested</param>
+            <param name="latMin">Bottom latitude</param>
+            <param name="lonMin">Leftmost longitude</param>
+            <param name="latMax">Maximum latitude</param>
+            <param name="lonMax">Maximum longitude</param>
+            <param name="cellSize">Size of each grid cell</param>
+            <param name="FetchClimateDataSource">Data source from which to fetch environmental data</param>
+        </member>
+        <member name="M:Madingley.EnviroData.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor for EnviroData
+            </summary>
+            <param name="fileName">Filename (including extension)</param>
+            <param name="dataName">The name of the variable that contains the data within the specified file</param>
+            <param name="dataType">Type of data, nc = NetCDF, ascii = ESRI ASCII)</param>
+            <param name="dataResolution">The temporal resolution of the environmental variable</param>
+            <param name="units">The units of the data</param>
+            <todo>Check whether lat/lon or 0/1 are fixed for all NetCDFs</todo>
+            <todo>CHECK IF DIMENSIONS HAVE TO BE THE SAME FOR ALL VARIABLES IN A NETCDF AND HOW TO EXTRACT DIMENSIONS FOR A SINGLE VARIABLE IF NECESSARY</todo>
+            <todo>Write code to check for equal cell sizes in NetCDFs</todo>
+        </member>
+        <member name="M:Madingley.EnviroData.GetValue(System.Double,System.Double,System.UInt32,System.Boolean@)">
+            <summary>
+            A method to extract the value of an environmental variable from the grid cell closest to a specified latitude and longitude
+            </summary>
+            <param name="lat">Latitude to get value from</param>
+            <param name="lon">Longitude to get value from</param>
+            <param name="timeInterval">The time interval to get the value from (i.e. the month, or 0 for yearly variables)</param>
+            <param name="missingValue">Boolean to indicate whether the returned value is a missing value</param>
+            <returns>The value of the environmental variable at the grid cell closest to the specified latitude and longitude</returns>
+        </member>
+        <member name="M:Madingley.EnviroData.GetValue(System.Double,System.Double,System.UInt32,System.Boolean@,System.Double,System.Double)">
+            <summary>
+            A method to extract the area weighted value of an environmental variable from the envirodata cells overlapped by the cell specified by lat and lon
+            </summary>
+            <param name="lat">Bottom latitude of cell to get value from</param>
+            <param name="lon">Leftmost longitude of cell to get value from</param>
+            <param name="timeInterval">The time interval to get the value from (i.e. the month, or 0 for yearly variables)</param>
+            <param name="missingValue">Boolean to indicate whether the returned value is a missing value</param>
+            <param name="latCellSize">The latitudinal size of cells in the model grid</param>
+            <param name="lonCellSize">The longitudinal size of cells in the model grid</param>
+            <returns>The area weighted value of an environmental variable from the envirodata cells overlapped by the cell specified by lat and lon</returns>
+        </member>
+        <member name="M:Madingley.EnviroData.EnvironmentListFromNetCDF(Microsoft.Research.Science.Data.DataSet,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Reads in two-dimensional environmental data from a NetCDF and stores them in the array of values within this instance of EnviroData
+            </summary>
+            <param name="internalData">The SDS object to get data from</param>
+            <param name="dataName">The name of the variable within the NetCDF file</param>
+            <param name="latInverted">Whether the latitude values are inverted in the NetCDF file (i.e. large to small values)</param>
+            <param name="longInverted">Whether the longitude values are inverted in the NetCDF file (i.e. large to small values)</param>
+        </member>
+        <member name="M:Madingley.EnviroData.EnvironmentListFromNetCDF3D(Microsoft.Research.Science.Data.DataSet,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Reads in three-dimensional environmental data from a NetCDF and stores them in the array of values within this instance of EnviroData
+            </summary>
+            <param name="internalData">The SDS object to get data from</param>
+            <param name="dataName">The name of the variable within the NetCDF file</param>
+            <param name="latInverted">Whether the latitude values are inverted in the NetCDF file (i.e. large to small values)</param>
+            <param name="longInverted">Whether the longitude values are inverted in the NetCDF file (i.e. large to small values)</param>
+        </member>
+        <member name="M:Madingley.EnviroData.Finalize">
+            <summary>
+            Dispose of an Envirodata instance
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.NumLats">
+            <summary>
+            Get number of latitudinal cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.NumLons">
+            <summary>
+            Get number of longitudinal cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.NumTimes">
+            <summary>
+            Get the number of time intervals encompassed by the environmental variable
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.LatMin">
+            <summary>
+            Get latitude of the bottom edge of the sothernmost grid cell
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.LonMin">
+            <summary>
+            Get latitude of the left edge of the most western grid cell
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.MissingValue">
+            <summary>
+            Get value used to denote missing data for this environmental variable
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.LatStep">
+            <summary>
+            Get latitudinal distance between adjacent cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.LonStep">
+            <summary>
+            Get longitudinal distance between adjacent cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.DataArray">
+            <summary>
+            Get list of arrays of values of the environmental variable
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.Lats">
+            <summary>
+            Get vector of latitudes of the bottom edges of grid cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.Lons">
+            <summary>
+            Get vector of longitudes of the left edges of grid cells
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.Times">
+            <summary>
+            Get vector containing values of the time dimension of the environmental variable
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.ReadFileString">
+            <summary>
+            Get the string required to read the file with the environmental data
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.Units">
+            <summary>
+            Gets the units of the environmental variable
+            </summary>
+        </member>
+        <member name="P:Madingley.EnviroData.NumEnviroLayers">
+            <summary>
+            Returns the number of environmental data layers opened
+            </summary>
+        </member>
+        <member name="T:Madingley.GridCell">
+            <summary>
+            Stores properties of grid cells
+            <todoD>Remove single valued state-variables and convert model to work with functional groups</todoD>
+            <todoD>Check the get/set methods and overloads</todoD>
+            <todoD>Convert GetEnviroLayer to field terminology</todoD>
+            </summary>
+        </member>
+        <member name="F:Madingley.GridCell._CellEnvironment">
+            <summary>
+            The environmental data for this grid cell
+            </summary>
+        </member>
+        <member name="F:Madingley.GridCell._Latitude">
+            <summary>
+            The latitude of this grid cell
+            </summary>
+        </member>
+        <member name="F:Madingley.GridCell._Longitude">
+            <summary>
+            The longitude of this grid cell
+            </summary>
+        </member>
+        <member name="F:Madingley.GridCell.Utilities">
+            <summary>
+            Instance of the class to perform general functions
+            </summary>
+        </member>
+        <member name="M:Madingley.GridCell.#ctor(System.Single,System.UInt32,System.Single,System.UInt32,System.Single,System.Single,System.Collections.Generic.SortedList{System.String,Madingley.EnviroData},System.Double,System.Object,System.Object,System.Collections.Generic.SortedList{System.String,System.Double},System.Boolean,System.Boolean)">
+            <summary>
+            Constructor for a grid cell; creates cell and reads in environmental data
+            </summary>
+            <param name="latitude">The latitude of the grid cell</param>
+            <param name="latIndex">The latitudinal index of the grid cell</param>
+            <param name="longitude">The longitude of the grid cell</param>
+            <param name="lonIndex">The longitudinal index of the grid cell</param>
+            <param name="latCellSize">The latitudinal dimension of the grid cell</param>
+            <param name="lonCellSize">The longitudinal dimension of the grid cell</param>
+            <param name="dataLayers">A list of environmental data variables in the model</param>
+            <param name="missingValue">The missing value to be applied to all data in the grid cell</param>
+            <param name="cohortFunctionalGroups">The definitions for cohort functional groups in the model</param>
+            <param name="stockFunctionalGroups">The definitions for stock functional groups in the model</param>
+            <param name="globalDiagnostics">A list of global diagnostic variables for the model grid</param>
+            <param name="tracking">Whether process-tracking is enabled</param>
+            <param name="specificLocations">Whether the model is being run for specific locations</param>
+        </member>
+        <member name="M:Madingley.GridCell.ConvertMissingValuesToZero(System.Double[],System.Double)">
+            <summary>
+            Converts any missing values to zeroes
+            </summary>
+            <param name="data">the data vector to convert</param>
+            <param name="missingValue">Missing data value to be converted to zero</param>
+            <returns>The data vector with any missing data values converted to zero</returns>
+        </member>
+        <member name="M:Madingley.GridCell.ContainsData(System.Double[],System.Double)">
+            <summary>
+            Checks if any non-missing value data exists in the vector data
+            </summary>
+            <param name="data">The data vector to be checked</param>
+            <param name="missingValue">The missing value to which the data will be compared</param>
+            <returns>True if non missing values are found, false if not</returns>
+        </member>
+        <member name="M:Madingley.GridCell.ContainsMissingValue(System.Double[],System.Double)">
+            <summary>
+            Checks if any non-missing value data exists in the vector data
+            </summary>
+            <param name="data">The data vector to be checked</param>
+            <param name="missingValue">The missing value to which the data will be compared</param>
+            <returns>True if non missing values are found, false if not</returns>
+        </member>
+        <member name="M:Madingley.GridCell.CalculateNPPSeasonality(System.Double[],System.Double)">
+            <summary>
+            Calculate monthly seasonality values of Net Primary Production - ignores missing values. If there is no NPP data (ie all zero or missing values)
+            then assign 1/12 for each month.
+            </summary>
+            <param name="NPP">Monthly values of NPP</param>
+            <param name="missingValue">Missing data value to which the data will be compared against</param>
+            <returns>The contribution that each month's NPP makes to annual NPP</returns>
+        </member>
+        <member name="P:Madingley.GridCell.CellEnvironment">
+            <summary>
+            Get the environmental data for this grid cell
+            </summary>
+        </member>
+        <member name="P:Madingley.GridCell.Latitude">
+            <summary>
+            Get the latitude of this grid cell
+            </summary>
+        </member>
+        <member name="P:Madingley.GridCell.Longitude">
+            <summary>
+            Get the longitude of this grid cell
+            </summary>
+        </member>
+        <member name="T:Madingley.MadingleyModel">
+            <summary>
+            The ecosystem model
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.EnviroStack">
+            <summary>
+            A list of environmental data layers
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.EcosystemModelGrid">
+            <summary>
+            An instance of ModelGrid to hold the grid to be used in this model
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.BottomLatitude">
+            <summary>
+            The lowest latitude for the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.TopLatitude">
+            <summary>
+            The upper latitude for the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.LeftmostLongitude">
+            <summary>
+            The left-most longitude for the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.RightmostLongitude">
+            <summary>
+            The right-most longitude for the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.CellSize">
+            <summary>
+            The size of the grid cells in degrees
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.CellRarefaction">
+            <summary>
+            The rarefaction to be applied to live cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel._CellList">
+            <summary>
+            Pairs of longitude and latitude indices for all active cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.GlobalDiagnosticVariables">
+            <summary>
+            A list of global diagnostics for this model run
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.RunGridCellsInParallel">
+            <summary>
+            Whether the model will run in parallel (default  is false)
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.SpecificLocations">
+            <summary>
+            Whether the model will be run for specific locations, instead of for the whole model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModel.InitialisationFileStrings">
+            <summary>
+            A sorted list of strings from the initialisation file
+            </summary>
+        </member>
+        <member name="M:Madingley.MadingleyModel.#ctor(Madingley.MadingleyModelInitialisation,System.Object,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            Initializes the ecosystem model
+            </summary>
+            <param name="initialisation">An instance of the model initialisation class</param> 
+            <param name="scenarioParameters">The parameters for the scenarios to run</param>
+            <param name="scenarioIndex">The index of the scenario being run</param>
+            <param name="outputFilesSuffix">The suffix to be applied to all outputs from this model run</param>
+            <param name="globalModelTimeStepUnit">The time step unit used in the model</param>
+            <param name="simulation">The index of the simulation being run</param>
+        </member>
+        <member name="M:Madingley.MadingleyModel.ReadSpecificLocations(System.String,System.String)">
+            <summary>
+            Read in the specified locations in which to run the model
+            </summary>
+            <param name="specificLocationsFile">The name of the file with specific locations information</param>
+            <param name="inputPath">The path to the folder which contains the specific locations file</param>
+        </member>
+        <member name="M:Madingley.MadingleyModel.AssignModelRunProperties(Madingley.MadingleyModelInitialisation,System.Object,System.Int32,System.String)">
+            <summary>
+            Assigns the properties of the current model run
+            </summary>
+            <param name="initialisation">An instance of the model initialisation class</param> 
+            <param name="scenarioParameters">The parameters for the scenarios to run</param>
+            <param name="scenarioIndex">The index of the scenario that this model is to run</param>
+            <param name="outputFilesSuffix">The suffix to be applied to all outputs from this model run</param>
+        </member>
+        <member name="M:Madingley.MadingleyModel.SetUpModelGrid(Madingley.MadingleyModelInitialisation,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Sets up the model grid within a Madingley model run
+            </summary>
+            <param name="initialisation">An instance of the model initialisation class</param> 
+            <param name="scenarioParameters">The parameters for the scenarios to run</param>
+            <param name="scenarioIndex">The index of the scenario that this model is to run</param>
+        </member>
+        <member name="T:Madingley.MadingleyModelInitialisation">
+            <summary>
+            Initialization information for Madingley model simulations
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._CellSize">
+            <summary>
+            The size of cells to be used in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._BottomLatitude">
+            <summary>
+            The lowest extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._TopLatitude">
+            <summary>
+            The uppermost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._LeftmostLongitude">
+            <summary>
+            The leftmost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RightmostLongitude">
+            <summary>
+            The rightmost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._CellRarefaction">
+            <summary>
+            The rarefaction of active cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._InitialisationFileStrings">
+            <summary>
+            Information from the initialization file
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._EnviroStack">
+            <summary>
+            The environmental layers for use in the model
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._TrackProcesses">
+            <summary>
+            Whether to output detailed diagnostics for the ecological processes
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._Units">
+            <summary>
+            The string values for the units of each environmental data layer
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation.Utilities">
+            <summary>
+            Instance of Utilities for timestep conversions
+            </summary>
+        </member>
+        <member name="M:Madingley.MadingleyModelInitialisation.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Reads the initalization file to get information for the set of simulations to be run
+            </summary>
+            <param name="initialisationFile">The name of the initialization file with information on the simulations to be run</param>
+            <param name="environmentDataRoot">The path to folder which contains the data inputs</param>
+            <param name="inputPath">The path to folder which contains the model inputs</param>
+        </member>
+        <member name="M:Madingley.MadingleyModelInitialisation.ReadAndCopyInitialisationFiles(System.String,System.String,System.String)">
+            <summary>
+            Reads in all initialisation files and copies them to the output directory for future reference
+            </summary>
+            <param name="initialisationFile">The name of the initialization file with information on the simulations to be run</param>
+            <param name="environmentDataRoot">The path to folder which contains the data inputs</param>
+            <param name="inputPath">The path to folder which contains the model inputs</param>
+            <todo>Need to adjust this file to deal with incorrect inputs, extra columns etc by throwing an error</todo>
+            <todo>Also need to strip leading spaces</todo>
+        </member>
+        <member name="M:Madingley.MadingleyModelInitialisation.ReadEnvironmentalLayers(System.String,System.String,System.String)">
+            <summary>
+            Reads the environmental layers listed in the specified file containing a list of environmental layers
+            </summary>
+            <param name="environmentalLayerFile">The name of the file containing the list of environmental layers</param>
+            <param name="environmentDataRoot">The path to folder which contains the data inputs</param>
+            <param name="inputPath">The path to folder which contains the model inputs</param>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.CellSize">
+            <summary>
+            Get and set the size of cells to be used in the model grid
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.BottomLatitude">
+            <summary>
+            Get and set the lowest extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.TopLatitude">
+            <summary>
+            Get and set the uppermost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.LeftmostLongitude">
+            <summary>
+            Get and set the leftmost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RightmostLongitude">
+            <summary>
+            Get and set the rightmost extent of the model grid in degrees
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.CellRarefaction">
+            <summary>
+            Get and set the rarefaction of active cells in the model grid
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.InitialisationFileStrings">
+            <summary>
+            Get and set information from the initialization file
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.EnviroStack">
+            <summary>
+            Get and set the environmental layers for use in the model
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.TrackProcesses">
+            <summary>
+            Get and set whether to output detailed diagnostics for the ecological processes
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.Units">
+            <summary>
+            Get and set the unit strings
+            </summary>
+        </member>
+        <member name="T:Madingley.ModelGrid">
+            <summary>
+            A class containing the model grid (composed of individual grid cells) along with grid attributes.
+            The model grid is referenced by [Lat index, Lon index]\
+            <todoD>Check Set and Get state variable methods</todoD>
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid._GridCellRarefaction">
+            <summary>
+            The rarefaction of grid cells to be applied to active cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid._NumLatCells">
+            <summary>
+            The number of latitudinal cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid._NumLonCells">
+            <summary>
+            The number of longitudinal cells in the model grid
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid._Lats">
+            <summary>
+            The bottom (southern-most) latitude of each row of grid cells
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid._Lons">
+            <summary>
+            The left (western-most) longitude of each column of grid cells
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid.InternalGrid">
+            <summary>
+            Array of grid cells
+            </summary>
+        </member>
+        <member name="F:Madingley.ModelGrid.Utilities">
+            <summary>
+            Instance of the class to perform general functions
+            </summary>
+        </member>
+        <member name="M:Madingley.ModelGrid.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Collections.Generic.SortedList{System.String,Madingley.EnviroData},System.Object,System.Object,System.Collections.Generic.SortedList{System.String,System.Double},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor for model grid: assigns grid properties and initialises the grid cells
+            </summary>
+            <param name="minLat">Minimum grid latitude (degrees)</param>
+            <param name="minLon">Minimum grid longitude (degrees, currently -180 to 180)</param>
+            <param name="maxLat">Maximum grid latitude (degrees)</param>
+            <param name="maxLon">Maximum grid longitude (degrees, currently -180 to 180)</param>
+            <param name="latCellSize">Latitudinal resolution of grid cell</param>
+            <param name="lonCellSize">Longitudinal resolution of grid cell</param>
+            <param name="cellRarefaction">The rarefaction to be applied to active grid cells in the model</param>
+            <param name="enviroStack">Environmental data layers</param>
+            <param name="cohortFunctionalGroups">The functional group definitions for cohorts in the model</param>
+            <param name="stockFunctionalGroups">The functional group definitions for stocks in the model</param>
+            <param name="globalDiagnostics">Global daignostic variables</param>
+            <param name="tracking">Whether process-tracking is enabled</param>
+            <param name="DrawRandomly">Whether the model is set to use a random draw</param>
+            <param name="specificLocations">Whether the model is to be run for specific locations</param>
+        </member>
+        <member name="M:Madingley.ModelGrid.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Collections.Generic.List{System.UInt32[]},System.Collections.Generic.SortedList{System.String,Madingley.EnviroData},System.Object,System.Object,System.Collections.Generic.SortedList{System.String,System.Double},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Overloaded constructor for model grid to construct the grid for specific locations
+            </summary>
+            <param name="minLat">Minimum grid latitude (degrees)</param>
+            <param name="minLon">Minimum grid longitude (degrees, currently -180 to 180)</param>
+            <param name="maxLat">Maximum grid latitude (degrees)</param>
+            <param name="maxLon">Maximum grid longitude (degrees, currently -180 to 180)</param>
+            <param name="latCellSize">Latitudinal size of grid cells</param>
+            <param name="lonCellSize">Longitudinal size of grid cells</param>
+            <param name="cellList">List of indices of active cells in the model grid</param>
+            <param name="enviroStack">List of environmental data layers</param>
+            <param name="cohortFunctionalGroups">The functional group definitions for cohorts in the model</param>
+            <param name="stockFunctionalGroups">The functional group definitions for stocks in the model</param>
+            <param name="globalDiagnostics">Global diagnostic variables</param>
+            <param name="tracking">Whether process tracking is enabled</param>
+            <param name="specificLocations">Whether the model is to be run for specific locations</param>
+            <param name="runInParallel">Whether model grid cells will be run in parallel</param>
+        </member>
+        <member name="M:Madingley.ModelGrid.InterpolateMissingValues">
+            <summary>
+            Estimates missing environmental data for grid cells by interpolation
+            </summary>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetInterpolatedValues(System.UInt32,System.UInt32,System.Double,System.Double,System.String,System.Double)">
+            <summary>
+            Calculate the weighted average of surrounding grid cell data, where those grid cells are of the specified realm and contain
+            non missing data values
+            </summary>
+            <param name="latIndex">Index of the latitude cell for which the weighted average over surrounding cells is requested</param>
+            <param name="lonIndex">Index of the longitude cell for which the weighted average over surrounding cells is requested</param>
+            <param name="lat">Latitude of the cell for which the weighted value is requested</param>
+            <param name="lon">Longitude of the cell for which the weighted value is requested</param>
+            <param name="dataName">Names of the data for which weighted value is requested</param>
+            <param name="realm">Realm of the grid cell for which data is to be averaged over</param>
+            <returns>The weighted average value of the specified data type across surrounding grid cells of the specified realm</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.FillWithInterpolatedValues(System.UInt32,System.UInt32,System.Double,System.Double,System.String,System.Double)">
+            <summary>
+            Calculate the weighted average of surrounding grid cell data, where those grid cells are of the specified realm and contain
+            non missing data values
+            </summary>
+            <param name="latIndex">Index of the latitude cell for which the weighted average over surrounding cells is requested</param>
+            <param name="lonIndex">Index of the longitude cell for which the weighted average over surrounding cells is requested</param>
+            <param name="lat">Latitude of the cell for which the weighted value is requested</param>
+            <param name="lon">Longitude of the cell for which the weighted value is requested</param>
+            <param name="dataName">Names of the data for which weighted value is requested</param>
+            <param name="realm">Realm of the grid cell for which data is to be averaged over</param>
+            <returns>The weighted average value of the specified data type across surrounding grid cells of the specified realm</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetLonIndex(System.Double)">
+            <summary>
+            Returns, for a given longitude, the appropriate longitude index in the grid
+            ASSUMES THAT LONGITUDES IN THE MODEL GRID OBJECT REFER TO LOWER LEFT CORNERS!!!
+            </summary>
+            <param name="myLon">Longitude, in degrees</param>
+            <returns>longitude index in the model grid</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetCellLongitude(System.UInt32)">
+            <summary>
+            Return the longitude of a cell at a particular lon. index
+            </summary>
+            <param name="cellLonIndex">The longitudinal index (i.e. row) of the cell</param>
+            <returns>Returns the longitude of the bottom of the cell, in degrees</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetCellLatitude(System.UInt32)">
+            <summary>
+            Return the latitude of a cell at a particular lat. index
+            </summary>
+            <param name="cellLatIndex">The latitudinal index (i.e. row) of the cell</param>
+            <returns>Returns the latitude of the bottom of the cell, in degrees</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetLatIndex(System.Double)">
+            <summary>
+            Returns, for a given latitude, the appropriate latitude index in the grid
+            ASSUMES THAT LATITUDES IN THE MODEL GRID OBJECT REFER TO LOWER LEFT CORNERS!!!
+            </summary>
+            <param name="myLat">Latitude, in degrees</param>
+            <returns>latitude index in the model grid</returns>
+        </member>
+        <member name="M:Madingley.ModelGrid.GetCellEnvironment(System.UInt32,System.UInt32)">
+            <summary>
+            A method to return the values for all environmental data layers for a particular grid cell
+            </summary>
+            <param name="cellLatIndex">Latitude index of grid cell</param>
+            <param name="cellLonIndex">Longitude index of grid cell</param>
+            <returns>A sorted list containing environmental data layer names and values</returns>
+        </member>
+        <member name="P:Madingley.ModelGrid.GlobalMissingValue">
+            <summary>
+            Get the global missing value
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.MinLatitude">
+            <summary>
+            Get the lower latitude of the lowest cell of the grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.MinLongitude">
+            <summary>
+            Get the leftmost longitude of the leftmost cell of the grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.MaxLatitude">
+            <summary>
+            Get the lowest latitude of the highest cell in the grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.MaxLongitude">
+            <summary>
+            Get the leftmost longitude of the rightmost cell in the grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.LatCellSize">
+            <summary>
+            Get the latitudinal length of each grid cell. Currently assumes all cells are equal sized.
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.LonCellSize">
+            <summary>
+            Get the longitudinal length of each grid cell. Currently assumes all cells are equal sized. 
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.GridCellRarefaction">
+            <summary>
+            Get the rarefaction of grid cells to be applied to active cells in the model grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.NumLatCells">
+            <summary>
+            Get the number of latitudinal cells in the model grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.NumLonCells">
+            <summary>
+            Get the number of longitudinal cells in the model grid
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.Lats">
+            <summary>
+            Get the bottom (southern-most) latitude of each row of grid cells
+            </summary>
+        </member>
+        <member name="P:Madingley.ModelGrid.Lons">
+            <summary>
+            Get the left (western-most) longitude of each column of grid cells
+            </summary>
+        </member>
+        <member name="T:Madingley.ClimateVariablesCalculator">
+            <summary>
+            Calculates derived climate variables for which no input data exist
+            </summary>
+        </member>
+        <member name="M:Madingley.ClimateVariablesCalculator.#ctor">
+            <summary>
+            Constructor the climate variables calculator
+            </summary>
+        </member>
+        <member name="M:Madingley.ClimateVariablesCalculator.MonthlyActualEvapotranspirationSoilMoisture(System.Double,System.Double[],System.Double[])">
+            <summary>
+            Calculates monthly water balance variables: actual evapotranspiration, soil water deficit,
+            and the an approximation for the length of the fire season.
+            Actual Evapotranspiration and soil moisture was calculated by following Prentice et al (1993)
+            "A simulation model for the transient effects of climate change on forest landscapes",
+            Ecological Modelling, 65, 51-70, but using potential evapotranspiration rates calculated elsewhere
+            (normally the Penman Monteith equation).
+            The approximate length of the fire season was calculated using equations (2) and (4) of 
+            Thonicke et al. (2001). "The role of fire disturbance for global vegetation dynamics: coupling
+            fire into a Dynamic Global Vegetation Model". Global Ecology and Biogeography, 10, 661-677.
+            </summary>
+            <param name="AvailableWaterCapacity">The available water capacity of the soil (mm)</param>
+            <param name="Precipitation">Mean monthly precipitation (mm)</param>
+            <param name="MonthlyTemperatures">Mean monthly temperatures, degrees celcius</param>
+            <returns>A Tuple containing i) monthly actual evapotranspiration (mm), ii) soil water deficit (mm) and, iii) fire season length (between 0 and 360 days) </returns>
+        </member>
+        <member name="M:Madingley.ClimateVariablesCalculator.CalculatePotentialEvapotranspiration(System.Double)">
+            <summary>
+            Calculates the monthly potential evapotranspiration according to
+            Malmstrom VH (1969) A new approach to the classification of climate. J Geog 68:351–357.
+            </summary>
+            <param name="Temperature">Mean monthly temperature, degrees Celsius</param>
+            <returns>Potential Monthly Evapotranspiration, mm</returns>
+        </member>
+        <member name="M:Madingley.ClimateVariablesCalculator.GetNDF(System.Double[],System.Double[],System.Double)">
+            <summary>
+            Estimates the fraction of the year in which the temperature drops below zero at some time in the day
+            according to the the CRU CL 2.0 gridded climate dataset (For details of this dataset see CRU2p0Dataset.txt)
+            </summary>
+            <param name="monthlyFrostDays">A vector containing the number of frost days each month</param>
+            <param name="monthlyTemperature">A vector containing average temperatures for each month</param>
+            <param name="missingValue">The missing value used in the the environmental datasets</param>
+            <returns>The fraction of the year in which temperature drops below zero at some point in the day</returns>
+        </member>
+        <member name="M:Madingley.ClimateVariablesCalculator.ApproximateNDF(System.Double[])">
+            <summary>
+            Calculates the number of days frost using an alternative algorithm to that in ClimateLookup
+            that is based on mean annual temperature data alone. This will probably be a coarse representation
+            of the number of frost days but will do for now.
+            </summary>
+            <param name="MATData">Mean monthly temperatures, degrees celcius</param>
+            <returns>Fraction of the year that experiences frost</returns>
+        </member>
+        <member name="T:Madingley.UtilityFunctions">
+            <summary>
+            Generic functions
+            </summary>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertToM180To180(System.Double[])">
+            <summary>
+            If longitudinal cell coordinates run from 0 to 360, the convert to -180 to 180 values
+            </summary>
+            <param name="lons">The longitudinal coorindates of the cells in the model grid</param>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.RandomlyOrderedIndices(System.UInt32)">
+            <summary>
+            Generate a random order in which cohorts will be subjected to ecological processes
+            </summary>
+            <param name="numberIndices">The number of cohorts in the current grid cell</param>
+            <returns>A vector of randomly ordered integers corresponding to the cohorts in the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.NonRandomlyOrderedCohorts(System.UInt32,System.UInt32)">
+            <summary>
+            Generate a non-random order in which cohorts will be subjected to ecological processes
+            </summary>
+            <param name="cohortNumber">The number of cohorts in the current grid cell</param>
+            <param name="currentTimeStep">The current time step of the model</param>
+            <returns>A vector of non-randomly ordered integers corresponding to the cohorts in the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.GetCurrentMonth(System.UInt32,System.String)">
+            <summary>
+            Get the month corresponding to the current time step
+            </summary>
+            <param name="currentTimestep">The current model time step</param>
+            <param name="modelTimestepUnits">The time step units</param>
+            <returns>The month corresponding to the current time step</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertTimeUnits(System.String,System.String)">
+            <summary>
+            Calculates factors to convert between different time units
+            </summary>
+            <param name="fromUnit">Time unit to convert from</param>
+            <param name="toUnit">Time unit to convert to</param>
+            <returns>Factor to convert between time units</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.FindJaggedArrayIndex(System.UInt32,System.UInt32[][],System.UInt32)">
+            <summary>
+            For a given cohort index, return a vector pair of values corresponding to the cohort's location in the jagged array of grid cell cohorts
+            </summary>
+            <param name="valueToFind">The index of the cohort (values range between zero and the number of cohorts in the jagged arrray)</param>
+            <param name="arrayToSearch">The jaggged array of cohorts, where rows correspond to functional groups, and columns to cohorts within functional groups</param>
+            <param name="totalNumberOfCohorts">The total number of cohorts in the grid cell</param>
+            <returns>The position of the specified cohort in the jagged array of grid cell cohorts, where the first value is the row index (functional group) and the second value is the column index (position within functional group)</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertSqMToSqDegrees(System.Double,System.Double)">
+            <summary>Converts values per square km to per square degree, given cell latitude</summary>
+            <param name="valueToConvert">The value per square km</param>
+            <param name="latitude">The latitude of the grid cell</param>
+            <returns>The specified value converted to per square degree </returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.LogNormalPDF(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the probability of a particular value under a log-normal distribution with specified mean and standard deviation
+            </summary>
+            <param name="xValue">The value to return the probability of under the log-normal distribtuion, in identity space</param>
+            <param name="meanIdentity">The mean of the log-normal distribution, in identity space</param>
+            <param name="standardDeviation">The standard deviation of the log-normal distribution, in log space</param>
+            <returns>The probability of the specified value under the specified log-normal distribution</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.NormalPDF(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the probability of a particular value under a normal distribution with specified mean and standard deviation
+            </summary>
+            <param name="xValue">The value to return the probability of under the normal distribtuion</param>
+            <param name="meanValue">The mean of the normal distribution</param>
+            <param name="standardDeviation">The standard deviation of the normal distribution</param>
+            <returns>The probability of the specified value under the specified normal distribution</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateGridCellArea(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculate the area of a grid cell in square km, given its dimensions and geographical position
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <param name="lonCellSize">The longitudinal dimension of the grid cell</param>
+            <param name="latCellSize">The latitudinal dimension of the grid cell</param>
+            <returns>The area in square km of the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateLengthOfDegreeLatitude(System.Single)">
+            <summary>
+            Calculate the length of a degree of latitude at a particular latitude
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <returns>The length of a degree of latitude in kilometres</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateLengthOfDegreeLongitude(System.Single)">
+            <summary>
+            Calculate the length of a degree of longitude at a particular latitude
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <returns>The length of a degree of longitude in kilometres</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.DegreesToRadians(System.Double)">
+            <summary>
+            Convert from degrees to radians
+            </summary>
+            <param name="degrees">The value in degrees to convert</param>
+            <returns>The value converted to radians</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+Folder,Filename,Extension,Dataset Name,Filetype,Internal Layer Name,Static,Resolution,Units
+,NPP,.nc,NPP,nc,LandNPP,Y,month,gC/m2/day
+,AvailableWaterCapacity,.nc,AWC,nc,AWC,Y,year,mm
+,LandSeaMask,.nc,land_sea_mask,nc,LandSeaMask,Y,year,
+OceanVelocity,averaged_u_50y_top100m_monthly,.nc,uVel,nc,uVel,Y,month,cm/s
+OceanVelocity,averaged_v_50y_top100m_monthly,.nc,vVel,nc,vVel,Y,month,cm/s
+SST,averaged_SST_50y_top100m_monthly,.nc,SST,nc,SST,Y,month,degC

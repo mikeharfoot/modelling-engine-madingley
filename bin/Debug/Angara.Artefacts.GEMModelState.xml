@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Angara.Artefacts.GEMModelState</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.CrossCellProcessTrackerData">
+ <summary>
+ Tracks diagnostics about the ecological processes
+ </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.GlobalProcessTrackerData">
+ <summary>
+ Tracks ecological processes
+ </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.EndYear(System.Int32,Angara.Artefacts.GEMModelState.GEMModelState)">
+<summary>
+ year * modelState
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.EndTimestep(System.Int32,Angara.Artefacts.GEMModelState.ProcessTrackerData[],Angara.Artefacts.GEMModelState.CrossCellProcessTrackerData,System.UInt32,Angara.Artefacts.GEMModelState.GEMModelState)">
+<summary>
+ currentTimestep * processTrackerData * crossCellProcessTrackerData * numberOfDispersals * modelState
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.EndRun(Angara.Artefacts.GEMModelState.GEMModelState)">
+<summary>
+ modelState
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.EndCell(System.Int32)">
+<summary>
+ cellIndex
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.BeginYear(System.Int32)">
+<summary>
+ year
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.BeginTimestep(System.Int32,System.Int32)">
+<summary>
+ currentTimestep * currentMonth
+</summary>
+</member>
+<member name="M:Angara.Artefacts.GEMModelState.IMadingleyModelOutput.BeginRun(Angara.Artefacts.GEMModelState.GEMModelState)">
+<summary>
+ modelState
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordDispersalForACellData">
+ <summary>
+ Record dispersal events in the dispersal tracker
+ </summary>
+ <param name="inboundCohorts">The cohorts arriving in a cell in the current time step</param>
+ <param name="outboundCohorts">The cohorts leaving a cell in the current time step</param>
+ <param name="outboundCohortWeights">The body masses of cohorts leaving the cell in the current time step</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordExtinctionData">
+ <summary>
+ Record the extinction of a cohort
+ </summary>
+ <param name="merged">Whether the cohort becoming extinct has ever been merged</param>
+ <param name="cohortIDs">The IDs of all cohorts that have contributed individuals to the cohort going extinct</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordHerbivoryMassFlowData">
+ <summary>
+ Records the flow of mass between primary producers and herbivores during a herbivory event
+ </summary>
+ <param name="herbivoreBodyMass">The individual body mass of the herbivore</param>
+ <param name="massFlow">The flow of mass between the primary producer and the herbivore</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordMortalityData">
+ <summary>
+ Record an instance of mortality in the output file
+ </summary>
+ <param name="birthTimeStep">The time step in which this cohort was born</param>
+ <param name="currentMass">The current body mass of individuals in the cohort</param>
+ <param name="adultMass">The adult mass of individuals in the cohort</param>
+ <param name="functionalGroup">The functional group of the cohort suffering mortality</param>
+ <param name="cohortID">The ID of the cohort suffering mortality</param>
+ <param name="numberDied">The number of individuals dying in this mortality event</param>
+ <param name="mortalitySource">The type of mortality causing the individuals to die</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordNPPData">
+ <summary>
+ Record a flow of biomass to plants through net primary production
+ </summary>
+ <param name="latIndex">The latitudinal index of the current grid cell</param>
+ <param name="lonIndex">The longitudinal index of the current grid cell</param>
+ <param name="value">The NPP value</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordNewCohortData">
+ <summary>
+ Record a new cohort in the reproduction tracker
+ </summary>
+ <param name="offspringCohortAbundance">The number of individuals in the new cohort</param>
+ <param name="parentCohortAdultMass">The adult body mass of the parent cohort</param>
+ <param name="functionalGroup">The functional group that the parent and offspring cohorts belong to</param>
+ <param name="parentCohortIDs">All cohort IDs associated with the acting parent cohort</param>
+ <param name="offspringCohortID">The cohort ID that has been assigned to the produced offspring cohort</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.RecordPredationMassFlowData">
+ <summary>
+ Records the flow of mass between a prey and its predator during a predation event
+ </summary>
+ <param name="preyBodyMass">The individual body mass of the prey</param>
+ <param name="predatorBodyMass">The individual body mass of the predator</param>
+ <param name="massFlow">The flow of mass between predator and prey</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackHerbivoryTrophicFlowData">
+ <summary>
+ Track the flow of mass between trophic levels during a herbivory event
+ </summary>
+ <param name="toFunctionalGroup">The index of the functional group that the predator belongs to</param>
+ <param name="massEaten">The mass eaten during the herbivory event</param>
+ <param name="predatorBodyMass">The body mass of the predator doing the eating</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackMaturityData">
+ <summary>
+ Track the maturity of a cohort in the reproduction tracker
+ </summary>
+ <param name="birthTimestep">The birth time step of the cohort reaching maturity</param>
+ <param name="juvenileMass">The juvenile mass of the cohort reaching maturity</param>
+ <param name="adultMass">The adult mass of the cohort reaching maturity</param>
+ <param name="functionalGroup">The functional group of the cohort reaching maturity</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackPredationTrophicFlowData">
+ <summary>
+ Track the flow of mass between trophic levels during a predation event
+ </summary>
+ <param name="fromFunctionalGroup">The index of the functional group being eaten</param>
+ <param name="toFunctionalGroup">The index of the functional group that the predator belongs to</param>
+ <param name="massEaten">The mass eaten during the predation event</param>
+ <param name="predatorBodyMass">The body mass of the predator doing the eating</param>
+ <param name="preyBodyMass">The body mass of the prey doing the eating</param>
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackPrimaryProductionTrophicFlowData">
+ <summary>
+ Track the flow of mass between trophic levels during primary production of autotrophs
+ </summary>
+ <param name="massEaten">The mass gained through primary production</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackTimestepGrowthData">
+ <summary>
+ Track growth of individuals in a cohort using the growth tracker
+ </summary>
+ <param name="currentBodyMass">The current body mass of individuals in the cohort</param>
+ <param name="functionalGroup">The funcitonal group of the cohort being tracked</param>
+ <param name="netGrowth">The net growth of individuals in the cohort this time step</param>
+ <param name="metabolism">The mass lost to indivduals in the cohort through metabolism</param>
+ <param name="predation">The mass gained by individuals in the cohort through predation</param>
+ <param name="herbivory">The mass gained by individuals in the cohort through herbivory</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.TrackTimestepMetabolismData">
+ <summary>
+ Tracks the mass lost by individuals in a cohort in a time step through metabolism
+ </summary>
+ <param name="currentBodyMass">The body mass of individuals in the acting cohort</param>
+ <param name="functionalGroup">The functional group index of the acting cohort</param>
+ <param name="temperature">The ambient temperature in the grid cell</param>
+ <param name="metabolicLoss">The mass lost by individuals through metabolism</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Artefacts.GEMModelState.Utils">
+
+</member>
+</members>
+</doc>

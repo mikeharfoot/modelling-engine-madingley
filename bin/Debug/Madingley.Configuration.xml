@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Madingley.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:Madingley.Configuration.Loader">
+            <summary>
+            Initialization information for Madingley model simulations
+            </summary>
+        </member>
+        <member name="M:Madingley.Configuration.Loader.Load(System.String,System.String)">
+            <summary>
+            Reads the initalization file to get information for the set of simulations to be run
+            </summary>
+            <param name="initialisationFile">The name of the initialization file with information on the simulations to be run</param>
+            <param name="inputPath">The path to folder which contains the inputs</param>
+        </member>
+        <member name="T:Madingley.FunctionalGroupDefinitions">
+            <summary>
+            Reads in and performs look-ups on functional group definitions
+            </summary>
+            <remarks>Mass bins values currently defined as middle of each mass bins</remarks>
+            <todoM>Throw error if there are any blanks in csv file</todoM>
+        </member>
+        <member name="F:Madingley.FunctionalGroupDefinitions.InternalData">
+            <summary>
+            An internal version of the dataset to query if necessary
+            </summary>
+        </member>
+        <member name="F:Madingley.FunctionalGroupDefinitions.IndexLookupFromTrait">
+            <summary>
+            A dictionary to allow functional group indices to be looked up based on trait values
+            </summary>
+        </member>
+        <member name="F:Madingley.FunctionalGroupDefinitions._FunctionalGroupProperties">
+            <summary>
+            A sorted list of all of the properties of functional groups and their values
+            </summary>
+        </member>
+        <member name="F:Madingley.FunctionalGroupDefinitions.TraitLookupFromIndex">
+            <summary>
+            Dictionary to allow traits of functional groups to be looked up based on the functional group index
+            </summary>
+        </member>
+        <member name="F:Madingley.FunctionalGroupDefinitions._AllFunctionalGroupsIndex">
+            <summary>
+            A list of the indices of all functional groups in the model
+            </summary>
+        </member>
+        <member name="M:Madingley.FunctionalGroupDefinitions.#ctor(System.String,System.String)">
+            <summary>
+            Constructor for the functional group definitions: reads in the specified functional group definition file, 
+            constructs lookup tables, mass ranges and initial cohort numbers in each functional group
+            </summary>
+            <param name="fileName">The name of the functional group definition file to be read in</param>
+            <param name="inputPath">The path to folder which contains the inputs</param>
+        </member>
+        <member name="P:Madingley.FunctionalGroupDefinitions.FunctionalGroupProperties">
+            <summary>
+            Get and set the sorted list of all of the properties of functional groups and their values
+            </summary>
+        </member>
+        <member name="P:Madingley.FunctionalGroupDefinitions.AllFunctionalGroupsIndex">
+            <summary>
+            Get the list of the indices of all functional groups in the model
+            </summary>
+        </member>
+        <member name="T:Madingley.MadingleyModelInitialisation">
+            <summary>
+            Initialization information for Madingley model simulations
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._GlobalModelTimeStepUnit">
+            <summary>
+            String identifying time step units to be used by the simulations
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._NumTimeSteps">
+            <summary>
+            The number of time steps to be run in the simulations
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._BurninTimeSteps">
+            <summary>
+            The number of time steps to run the model for before any impacts are applied
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._ImpactTimeSteps">
+            <summary>
+            For scenarios with temporary impacts, the number of time steps to apply the impact for
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RecoveryTimeSteps">
+            <summary>
+            For scenarios with temporary impacts, the number of time steps to apply the impact for
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._InstantaneousTimeStep">
+            <summary>
+            For scenarios with instantaneous impacts, the time step in which to apply the impact
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._NumInstantaneousTimeStep">
+            <summary>
+            For scenarios with instantaneous impacts, the number of time steps to apply the impact for
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RunInParallel">
+            <summary>
+            Whether to run the model for different grid cells in parallel
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RunCellsInParallel">
+            <summary>
+            Whether to run the model for different grid cells in parallel
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RunSimulationsInParallel">
+            <summary>
+            Whether to run the model for different simulations in parallel
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._RunRealm">
+            <summary>
+            Which realm to run the model for
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._DrawRandomly">
+            <summary>
+            Whether to draw cohort properties randomly when seeding them, and whether cohorts will undergo ecological processes in a random order
+            </summary>
+            <remarks>Value should be set in initialization file, but default value is true</remarks>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._ExtinctionThreshold">
+            <summary>
+            The threshold abundance below which cohorts will be made extinct
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._MergeDifference">
+            <summary>
+            The threshold difference between cohorts, within which they will be merged
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._MaxNumberOfCohorts">
+            <summary>
+            The maximum number of cohorts to be in the model, per grid cell, when it is running
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._DispersalOnly">
+            <summary>
+            Whether to run only dispersal (i.e. turn all other ecological processes off, and set dispersal probability to one temporarily)
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._PlanktonDispersalThreshold">
+            <summary>
+            The weight threshold (grams) below which marine organisms that are not obligate zooplankton will be dispersed planktonically
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._InitialisationFileStrings">
+            <summary>
+            Information from the initialization file
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._CohortFunctionalGroupDefinitions">
+            <summary>
+            The functional group definitions of cohorts in the model
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._StockFunctionalGroupDefinitions">
+            <summary>
+            The functional group definitions of stocks in the model
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation._ImpactCellIndices">
+            <summary>
+            The index of the cell, within the list of cells to run, to apply impact scenarios on
+            </summary>
+        </member>
+        <member name="F:Madingley.MadingleyModelInitialisation.Utilities">
+            <summary>
+            Instance of Utilities for timestep conversions
+            </summary>
+        </member>
+        <member name="M:Madingley.MadingleyModelInitialisation.#ctor(System.String,System.String)">
+            <summary>
+            Reads the initalization file to get information for the set of simulations to be run
+            </summary>
+            <param name="initialisationFile">The name of the initialization file with information on the simulations to be run</param>
+            <param name="inputPath">The path to folder which contains the inputs</param>
+        </member>
+        <member name="M:Madingley.MadingleyModelInitialisation.ReadAndCopyInitialisationFiles(System.String,System.String)">
+            <summary>
+            Reads in all initialisation files and copies them to the output directory for future reference
+            </summary>
+            <param name="initialisationFile">The name of the initialization file with information on the simulations to be run</param>
+            <param name="inputPath">The path to folder which contains the inputs</param>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.GlobalModelTimeStepUnit">
+            <summary>
+            Get and set the string identifying time step units to be used by the simulations
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.NumTimeSteps">
+            <summary>
+            Get and set the number of time steps to be run in the simulations
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.BurninTimeSteps">
+            <summary>
+            Get and set the number of time steps to run the model for before any impacts are applied
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.ImpactTimeSteps">
+            <summary>
+            Get and set the number of time steps to apply the impact for, for scenarios with temporary impacts
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RecoveryTimeSteps">
+            <summary>
+            Get and set the number of time steps to apply the impact for, for scenarios with temporary impacts
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.InstantaneousTimeStep">
+            <summary>
+            Get and set the time step in which to apply the impact, for scenarios with instantaneous impacts
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.NumInstantaneousTimeStep">
+            <summary>
+            Get and set the number of time steps to apply the impact for, for scenarios with instantaneous impacts
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RunInParallel">
+            <summary>
+            Get and set whether to run the model for different grid cells in parallel
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RunCellsInParallel">
+            <summary>
+            Get and set whether to run the model for different grid cells in parallel
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RunSimulationsInParallel">
+            <summary>
+            Get and set whether to run the model for different grid cells in parallel
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.RunRealm">
+            <summary>
+            Get and set which realm to run the model for
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.DrawRandomly">
+            <summary>
+            Get and set whether to draw cohort properties randomly when seeding them, and whether cohorts will undergo ecological processes in a random order
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.ExtinctionThreshold">
+            <summary>
+            Get and set the threshold abundance below which cohorts will be made extinct
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.MergeDifference">
+            <summary>
+            Get and set the threshold difference between cohorts, within which they will be merged
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.MaxNumberOfCohorts">
+            <summary>
+             Get and set the maximum number of cohorts per grid cell
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.DispersalOnly">
+            <summary>
+            Get and set whether to run dispersal only
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.PlanktonDispersalThreshold">
+            <summary>
+            Get and set the weight threshold (grams) below which marine organisms that are not obligate zooplankton will be dispersed planktonically
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.InitialisationFileStrings">
+            <summary>
+            Get and set information from the initialization file
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.CohortFunctionalGroupDefinitions">
+            <summary>
+            Get and set the functional group definitions of cohorts in the model
+            </summary>
+        </member>
+        <member name="P:Madingley.MadingleyModelInitialisation.StockFunctionalGroupDefinitions">
+            <summary>
+            Get and set the functional group definitions of stocks in the model
+            </summary>
+        </member>
+        <member name="T:Madingley.ScenarioParameterInitialisation">
+            <summary>
+            Reads the file specifying which scenarios will be run, and stores this information
+            </summary>
+        </member>
+        <member name="F:Madingley.ScenarioParameterInitialisation._scenarioNumber">
+            <summary>
+            The number of scenarios to be run
+            </summary>
+        </member>
+        <member name="F:Madingley.ScenarioParameterInitialisation._scenarioParameters">
+            <summary>
+            Parameters for all scenarios in the model run
+            </summary>
+        </member>
+        <member name="M:Madingley.ScenarioParameterInitialisation.#ctor(System.String,System.String)">
+            <summary>
+            Constructor for ScenarioParameterInitialisation: reads in scenario parameters from a specified file
+            </summary>
+            <param name="scenarioParameterFile">The name of the scenario parameters file, which must be in the 'Model setup' directory</param>
+            <param name="inputPath">The path to folder which contains the inputs</param>
+        </member>
+        <member name="P:Madingley.ScenarioParameterInitialisation.scenarioNumber">
+            <summary>
+            Get the number of scenarios to be run
+            </summary>
+        </member>
+        <member name="P:Madingley.ScenarioParameterInitialisation.scenarioParameters">
+            <summary>
+            Get the parameters for all scenarios in the model run
+            </summary>
+        </member>
+        <member name="T:Madingley.UtilityFunctions">
+            <summary>
+            Generic functions
+            </summary>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertToM180To180(System.Double[])">
+            <summary>
+            If longitudinal cell coordinates run from 0 to 360, the convert to -180 to 180 values
+            </summary>
+            <param name="lons">The longitudinal coorindates of the cells in the model grid</param>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.RandomlyOrderedIndices(System.UInt32)">
+            <summary>
+            Generate a random order in which cohorts will be subjected to ecological processes
+            </summary>
+            <param name="numberIndices">The number of cohorts in the current grid cell</param>
+            <returns>A vector of randomly ordered integers corresponding to the cohorts in the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.NonRandomlyOrderedCohorts(System.UInt32,System.UInt32)">
+            <summary>
+            Generate a non-random order in which cohorts will be subjected to ecological processes
+            </summary>
+            <param name="cohortNumber">The number of cohorts in the current grid cell</param>
+            <param name="currentTimeStep">The current time step of the model</param>
+            <returns>A vector of non-randomly ordered integers corresponding to the cohorts in the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.GetCurrentMonth(System.UInt32,System.String)">
+            <summary>
+            Get the month corresponding to the current time step
+            </summary>
+            <param name="currentTimestep">The current model time step</param>
+            <param name="modelTimestepUnits">The time step units</param>
+            <returns>The month corresponding to the current time step</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertTimeUnits(System.String,System.String)">
+            <summary>
+            Calculates factors to convert between different time units
+            </summary>
+            <param name="fromUnit">Time unit to convert from</param>
+            <param name="toUnit">Time unit to convert to</param>
+            <returns>Factor to convert between time units</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.FindJaggedArrayIndex(System.UInt32,System.UInt32[][],System.UInt32)">
+            <summary>
+            For a given cohort index, return a vector pair of values corresponding to the cohort's location in the jagged array of grid cell cohorts
+            </summary>
+            <param name="valueToFind">The index of the cohort (values range between zero and the number of cohorts in the jagged arrray)</param>
+            <param name="arrayToSearch">The jaggged array of cohorts, where rows correspond to functional groups, and columns to cohorts within functional groups</param>
+            <param name="totalNumberOfCohorts">The total number of cohorts in the grid cell</param>
+            <returns>The position of the specified cohort in the jagged array of grid cell cohorts, where the first value is the row index (functional group) and the second value is the column index (position within functional group)</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.ConvertSqMToSqDegrees(System.Double,System.Double)">
+            <summary>Converts values per square km to per square degree, given cell latitude</summary>
+            <param name="valueToConvert">The value per square km</param>
+            <param name="latitude">The latitude of the grid cell</param>
+            <returns>The specified value converted to per square degree </returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.LogNormalPDF(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the probability of a particular value under a log-normal distribution with specified mean and standard deviation
+            </summary>
+            <param name="xValue">The value to return the probability of under the log-normal distribtuion, in identity space</param>
+            <param name="meanIdentity">The mean of the log-normal distribution, in identity space</param>
+            <param name="standardDeviation">The standard deviation of the log-normal distribution, in log space</param>
+            <returns>The probability of the specified value under the specified log-normal distribution</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.NormalPDF(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the probability of a particular value under a normal distribution with specified mean and standard deviation
+            </summary>
+            <param name="xValue">The value to return the probability of under the normal distribtuion</param>
+            <param name="meanValue">The mean of the normal distribution</param>
+            <param name="standardDeviation">The standard deviation of the normal distribution</param>
+            <returns>The probability of the specified value under the specified normal distribution</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateGridCellArea(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculate the area of a grid cell in square km, given its dimensions and geographical position
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <param name="lonCellSize">The longitudinal dimension of the grid cell</param>
+            <param name="latCellSize">The latitudinal dimension of the grid cell</param>
+            <returns>The area in square km of the grid cell</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateLengthOfDegreeLatitude(System.Single)">
+            <summary>
+            Calculate the length of a degree of latitude at a particular latitude
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <returns>The length of a degree of latitude in kilometres</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.CalculateLengthOfDegreeLongitude(System.Single)">
+            <summary>
+            Calculate the length of a degree of longitude at a particular latitude
+            </summary>
+            <param name="latitude">The latitude of the bottom-left corner of the grid cell</param>
+            <returns>The length of a degree of longitude in kilometres</returns>
+        </member>
+        <member name="M:Madingley.UtilityFunctions.DegreesToRadians(System.Double)">
+            <summary>
+            Convert from degrees to radians
+            </summary>
+            <param name="degrees">The value in degrees to convert</param>
+            <returns>The value converted to radians</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,5002 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Angara</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.MdVector`1.TrySelect(Microsoft.FSharp.Collections.FSharpList{System.Int32})">
+<summary>
+ Gets new IndexMap with items having indices starting with or equals to the given baseIndex.
+ The selection indices do not include the baseIndex.
+</summary>
+</member>
+<member name="M:Angara.MdVector`1.TryGetItem(Microsoft.FSharp.Collections.FSharpList{System.Int32})">
+<summary>
+ Returns an item at given index, if any; otherwise, returns None.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.MdVector`1.ToSeq(Microsoft.FSharp.Collections.FSharpList{System.Int32})">
+<summary>
+ Returns a sequence of items with their indices, 
+ selecting items with index that starts with or equals to the given baseIndex.
+</summary>
+</member>
+<member name="M:Angara.MdVector`1.ToSeq">
+<summary>
+ Returns a sequence of items with their indices.
+</summary>
+</member>
+<member name="M:Angara.MdVector`1.SetItem(Microsoft.FSharp.Collections.FSharpList{System.Int32},`0)">
+<summary>
+ Adds item at given index.
+ If there are indices that start with or equal to given index, they are removed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Work.EvalResult``2(System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}}})">
+<summary>
+ Evaluates workExpression and returns its result or raises a WorkEvaluationExpression if cannot complete the work.
+</summary>
+</member>
+<member name="M:Angara.Work.EvalResult``1(System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``0}})">
+<summary>
+ Evaluates workExpression and returns its result or raises a WorkEvaluationExpression if cannot complete the work.
+</summary>
+</member>
+<member name="M:Angara.Work.EvalResult(System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Microsoft.FSharp.Core.Unit})">
+<summary>
+ Evaluates workExpression and returns its result or raises a WorkEvaluationExpression if cannot complete the work.
+</summary>
+</member>
+<member name="M:Angara.Work.EvalResult(System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}})">
+<summary>
+ Evaluates workExpression and returns its result or raises a WorkEvaluationExpression if cannot complete the work.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Annotations">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.CompoundContracts.arg``5(System.String,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Artefact{``0},``1},System.Tuple{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Guid,System.Int32}},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,``2},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Artefact{``0},``3}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,``2},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},``4}}})">
+<summary>
+ Give name to an argument of a generator.
+</summary>
+</member>
+<member name="M:Angara.CompoundContracts.from``3(``0)">
+<summary>
+ Begin creating a compound method from the &apos;generator: Artefact&lt;_&gt; -&gt; Artefact&lt;_&gt; -&gt; ... Work&lt;_&gt;&apos;.
+</summary>
+</member>
+<member name="M:Angara.CompoundContracts.make2``3(System.String,System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}}},System.Tuple{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Guid,System.Int32}},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}}},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}}}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}}},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},``2}}})">
+<summary>
+ Create a compound method producing two outputs with a given &apos;method id&apos;. The &apos;method id&apos; is by convention a unique combination of two words.
+</summary>
+</member>
+<member name="M:Angara.CompoundContracts.make1``2(System.String,System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``0}},System.Tuple{Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Guid,System.Int32}},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,Angara.WorkExpression.Artefact{``0}},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``0}}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.Graph.Contract,Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,Angara.WorkExpression.Artefact{``0}},Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Artefact}},``1}}})">
+<summary>
+ Create a compound method producing one output with a given &apos;method id&apos;. The &apos;method id&apos; is by convention a unique combination of two words.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.CompoundContracts.fromWork``1(System.String,Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``0})">
+<summary>
+ Creates a contract of a method which runs the given work for input artefacts when evaluated.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.CompoundContracts">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Contracts">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Control">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Distributed.DistributedMethodInputResolver">
+<summary>
+ Resolves input artefacts for a given vertex slice in a distributed environment.
+ If an artefact is remote, fetches it or re-computes locally.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Distributed.INode.PostCompleted(System.Tuple{System.Guid,Microsoft.FSharp.Collections.FSharpList{System.Int32}},System.Tuple{Microsoft.FSharp.Core.FSharpOption{System.Int32},Microsoft.FSharp.Collections.FSharpList{System.Int32}})">
+<summary>
+ Posts a notification that given vertex slice is completed.
+ Also takes optional iteration number and mandatory output shape.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Distributed.InProcess.NodeEngine.Resume">
+<summary>
+ Resumes messages of the state machine.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Distributed.NodeRuntime">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.ExecutionRuntime">
+<summary>
+ Provides execution runtime for the given state machine.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.ExecutionStatus.CanStart">
+<summary>
+ Can be started.
+ &quot;time&quot; keeps time index when vertex became &quot;CanStart&quot;
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.ExecutionStatus">
+<summary>
+ Shape is a list of integer, each list item corresponds to an output artefacts
+ and if it is 1d-array then contains its lengths; otherwise, 0.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.IExecutionRuntime.onProgress">
+<summary>
+ Subscribes a function on progress report of a given vertex.
+ Not thread-safe at the moment!!!
+ Unsubscription: dispose the result of Observable.Subscribe, if use it.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Locality">
+<summary>
+ Allows to determine whether the given vertex slice is local or not.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Message.Start">
+<summary>
+ Starts methods. Replies true, if method is started; otherwise, false.
+ If index is not provided for a vector method, all slices of that methods are expected to be
+ in &quot;CanStart&quot; status and all are started; otherwise, nothing happens and message is replied with &quot;false&quot;.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Output">
+<summary>
+ Represents output artefacts of a method.
+ An artefact can be missing if work snapshot couldn&apos;t be restored completely.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.ThreadPoolScheduler.Execute(Angara.Execution.RuntimeExecutionContext,Angara.Execution.RuntimeExecutionCallback,System.Threading.CancellationTokenSource)">
+<summary>
+ Runs given method for the inputs in a thread pool and reports on execution status update.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.VertexChanges.Modified">
+<summary>
+ Some items of a vertex state are changed.
+</summary>
+</member>
+<member name="T:Angara.Execution.VertexChanges.ShapeChanged">
+<summary>
+ Shape of a vertex state could be changed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Analysis.RuntimeAction.Remove">
+<summary>
+ Forget about the method
+</summary>
+</member>
+<member name="T:Angara.Execution.Analysis.RuntimeAction.Execute">
+<summary>
+ Execute a method and send &quot;Succeeded&quot; or &quot;Failed&quot; 
+</summary>
+</member>
+<member name="T:Angara.Execution.Analysis.RuntimeAction.Delay">
+<summary>
+ Send &quot;Start&quot; message after a delay
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Analysis">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.EngineAPI.AwaitWorkMessage">
+<summary>
+ Awaits for a Work state which satisfies the given predicate.
+ The predicate gets complete work state and delta with previous state.
+ First call of the predicate contains only initial work state and no changes.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.EngineAPI.GetOutputsAsync(Angara.Execution.IEngine,Angara.Graph.MethodVertex)">
+<summary>
+ Gets an array of artefacts of all output ports of a scalar vertex.
+</summary>
+</member>
+<member name="M:Angara.Execution.EngineAPI.GetVectorOutputsAsync(Angara.Execution.IEngine,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.MethodVertex)">
+<summary>
+ Gets an array of artefacts of all output ports of a vertex at a given scope index.
+</summary>
+</member>
+<member name="M:Angara.Execution.EngineAPI.StartV(Angara.Execution.IEngine,Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Microsoft.FSharp.Core.FSharpOption{System.UInt32})">
+<summary>
+ Starts methods. Replies true, if method is started; otherwise, false.
+</summary>
+</member>
+<member name="M:Angara.Execution.EngineAPI.Start(Angara.Execution.IEngine,Angara.Graph.MethodVertex)">
+<summary>
+ Starts methods. Replies true, if method is started; otherwise, false.
+ If method is a vector, all slices are expected to be
+ in &quot;CanStart&quot; status and all are started; otherwise, nothing happens and returned value is &quot;false&quot;.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.EngineAPI.DisconnectAsync(Angara.Execution.IEngine,Angara.Graph.MethodVertex,System.Int32,Microsoft.FSharp.Core.FSharpOption{System.Tuple{Angara.Graph.MethodVertex,System.Int32}})">
+<summary>
+ Clears incoming connections to the given input.
+ If source is None, clear all incoming connections; otherwise, just connection from the given source.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.EngineAPI.AwaitStability(Angara.Execution.IEngine)">
+<summary>
+ Awaits until the engine produces a stable work (i.e. either complete or incomplete).
+ Returns the work and boolean value indicating whether the work is complete (true),
+ or incomplete (false).
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.EngineAPI">
+
+</member>
+<member name="M:Angara.Execution.EngineHelpers.getInputNames(Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,System.String})">
+ <summary>Collects names of outputs of the connected methods into an array of strings for the given method.</summary>
+ <param name="graph">Work graph</param>
+ <param name="state">Work execution state</param>
+ <param name="v">Method to collect inputs for.</param>
+ <returns>An array of strings, element of an array corresponds to the respective artefact name on input port.</returns>
+</member>
+<member name="M:Angara.Execution.EngineHelpers.getInputs(Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32})">
+ <summary>Collects outputs of the connected methods into an array of input artefacts for the given method.</summary>
+ <param name="graph">Work graph</param>
+ <param name="state">Work execution state</param>
+ <param name="v">Method to collect inputs for.</param>
+ <returns>An array of input snapshots, element of an array corresponds to the respective input port.
+ If element is NotAvailable, no up-to-date artefact(s) exists for that input.
+ If element is Item, there is a single artefact for the input.
+ If element is Array, there are a number of artefacts that altogether is an input.
+ </returns>
+</member>
+<member name="M:Angara.Execution.EngineHelpers.getReducedOutput(Angara.Graph.ConnectionEdge,Microsoft.FSharp.Collections.FSharpList{System.Int32},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Sames as getOutput, but &quot;i&quot; has rank one less than rank of the source vertex,
+ therefore result is an array of artefacts for all available indices complementing &quot;i&quot;.
+</summary>
+</member>
+<member name="M:Angara.Execution.EngineHelpers.getOutput(Angara.Graph.ConnectionEdge,Microsoft.FSharp.Collections.FSharpList{System.Int32},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+ <summary>Returns current up-to-date output associated with the edge.</summary>
+ <param name="edge">Output coming through this edge is to be returned</param>
+ <param name="state">Work state keeping the data</param>
+ <remarks>
+ Returns Some(v) only if method is up-to-date and non transient. If it is transient, initiates its re-execution (sends 'Start').
+ Returns None, if method is transient or outdated.
+ </remarks>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.EngineHelpers">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Engines">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.MailboxStateMachine.StateMachine">
+<summary>
+ Handles messages coming from &quot;source&quot; and advances the work.    
+ NB: &quot;source&quot; shouldn&apos;t have a message until the StateMachine.Start is finished.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.MailboxStateMachine">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.Transition.transition(System.UInt32,Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Angara.Execution.Message)">
+<summary>
+ Makes a single execution step by evolving a given work in response to a message.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.initial(Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Initializes work snapshot by adding missing vertex states.
+ The returned graph is same as input graph.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.downstreamShape(Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges})">
+<summary>
+ When &apos;v&apos; succeeds and thus we have its output artefacts, this method updates downstream vertices so their state dimensionality corresponds to the given output.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.updateStatuses(Angara.Graph.MethodVertex,Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges})">
+<summary>
+ Rebuilds shapes of vsrc and its downstream when vsrc is invalidated as a whole and becomes incomplete
+ (connect/disconnect).
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.Transition.downstreamToCanStartOrIncomplete(System.UInt32,Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges})">
+<summary>
+ Updates status of a single index of the vertex status (i.e. scope remains the same)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Execution.Transition.makeCanStart(System.UInt32,Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges})">
+<summary>
+ Move given vertex item to &quot;CanStart&quot;, increases its version number
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.startTransient(System.UInt32,Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges})">
+<summary>
+ &quot;v[index]&quot; is a transient vertex in state Complete(k), CompleteStarted(k) or CompleteStartRequested(k)
+ Results: &quot;v[index]&quot; is either in CompleteStarted(k) or CompleteStartRequested(k).
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.upstreamArtefactStatus(Angara.Graph.ConnectionEdge,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Gets either uptodate, outdated or transient status for an upstream artefact at given slice.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.getArrayItemArtefactStatus(Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},System.Int32,System.Int32,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Gets either uptodate, outdated or transient status for an item (arrayIndex) of an array-artefact at given index.
+ If there is not slice with given index (e.g. if method has unassigned input port), or shape of output array is less than arrayIndex,
+ returns &apos;outdated&apos;.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.getArtefactStatus(Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},System.Int32,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Gets either uptodate, outdated or transient status for an artefact at given index.
+ If there is not slice with given index (e.g. if method has unassigned input port), 
+ returns &apos;outdated&apos;.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.downstreamToIncomplete(Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}},Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.Execution.VertexChanges},Angara.Execution.IncompleteReason)">
+<summary>
+ Moves downstream vertex items of the given vertex item to an incomplete state.
+</summary>
+</member>
+<member name="M:Angara.Execution.Transition.downstreamVertices(Angara.Graph.MethodVertex,Microsoft.FSharp.Collections.FSharpList{System.Int32},Angara.Graph.WorkGraph,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,Angara.MdVector{Angara.Execution.VertexItemState}})">
+<summary>
+ Builds tree indices of the immediate dependent vertices.
+ Preconditions: either case:
+ (1) v[index] is CanStart
+ (2) v[index] is Uptodate
+ Both guarantees that all dimensions lengths of the vertex scope except at least of last are known.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Execution.Transition">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Graph.Behavior.ResumableIterativeFunction">
+<summary>
+ Function can resume from any iteration.
+ Parameters: 
+ initial:Artefact array option is an initial value which is a result of the last iteration (None if iteration is zero).
+ input:Artefact array is an inputs of the method.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.ConnectionType.ToString">
+<summary>
+ The &apos;index&apos; is a zero-based index into target input. The target input must be an array.
+</summary>
+</member>
+<member name="T:Angara.Graph.ConnectionType">
+<summary>
+ zero-based index into an array of method outputs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.TryRemoveVertex(`0)">
+<summary>
+ Removes a vertex which has no outgoing edges.
+ If vertex is not found, does nothing.
+ If vertex has outgoing edges, the method returns None.
+ Its in edges are removed automatically.
+</summary>
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.TopoFold``1(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{`0,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{`1},``0}}},``0)">
+<summary>
+ Folds graph in topological order so vertices without incoming edges go first,
+ then go vertices that has incoming edges from already folded vertices and so on
+ Folder function takes state, vertex and outgoing edges for this vertex.
+ Fold method uses Kahn algorithm.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.Provenance(`0)">
+<summary>
+ Gets a provenance DAG for the given vertex (it is a subset of the current DAG).
+ Includes the target vertex as well.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.Fold``1(`0,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{`0,System.Tuple{``0,System.Boolean}}},``0)">
+<summary>
+ Calls &apos;fold&apos; for each vertex starting from &apos;source&apos; downstream to end vertices or final vertices.
+ A vertex is final if &apos;fold&apos; returns &quot;false&quot; for it.
+</summary>
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.EnumerateDownstream(`0)">
+<summary>
+ Enumerates downstream vertices.
+ Each vertex (including the given one which goes first) is enumerated once in an undefined order.
+</summary>
+</member>
+<member name="M:Angara.Graph.DirectedAcyclicGraph`2.Combine(Angara.Graph.DirectedAcyclicGraph{`0,`1})">
+<summary>
+ Doesn&apos;t allow target to have same vertices as in the original graph.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.IGraph`2.TryRemoveVertex(`0)">
+<summary>
+ Removes a vertex which has no outgoing edges.
+ If vertex is not found, does nothing.
+ If vertex has outgoing edges, the method returns None.
+ Its in edges are removed automatically.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Graph.OutputRef">
+<summary>
+ zero-based index into an array of method inputs
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.WorkGraph.TryRemove(Angara.Graph.MethodVertex)">
+<summary>
+ Removes a vertex which has no outgoing edges.
+ If vertex is not found, does returns original graph.
+ If vertex has outgoing edges, the method returns None.
+ Its in edges are removed automatically.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.WorkGraph.ConnectItem(Angara.Graph.MethodVertex,System.Int32,Angara.Graph.MethodVertex,System.Int32)">
+<summary>
+ Connects two vertices using collect connection type.
+</summary>
+</member>
+<member name="M:Angara.Graph.WorkGraph.Connect(Angara.Graph.MethodVertex,System.Int32,Angara.Graph.MethodVertex,System.Int32)">
+<summary>
+ Connects two vertices using one-to-one, scatter or reduce connection types.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Graph.WorkGraph">
+<summary>
+ Represents a graph of methods where edge is a data dependency between two methods.
+ (Level 2)
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Graph.Constants">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Graph.Operations.toSeq``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{System.Lazy{System.Collections.Generic.IEnumerable{``1}},Microsoft.FSharp.Core.FSharpFunc{System.Lazy{System.Collections.Generic.IEnumerable{``1}},System.Boolean}}},Angara.Graph.DirectedAcyclicGraph{``0,``1},System.Collections.Generic.IEnumerable{``0})">
+<summary>
+ Returns a sequence of vertices which starts with given vertex and finishes when isFinal returns true (final vertices are not included).
+ isFinal: vertex -&gt; lazy&lt;input edges&gt; -&gt; lazy&lt;output edges&gt; -&gt; is final
+</summary>
+</member>
+<member name="T:Angara.Graph.Operations">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Graph.ScopeOps">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Hosting.ArtefactChanges.Iterated">
+<summary>
+ Artefact was up-to-date and has been replaced with new up-to-date artefact (in iterative method)
+</summary>
+</member>
+<member name="T:Angara.Hosting.ArtefactChanges.Produced">
+<summary>
+ Artefact has become up-to-date
+</summary>
+</member>
+<member name="T:Angara.Hosting.ArtefactChanges.Outdated">
+<summary>
+ Artefact has become outdated
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Angara.Hosting.ArtefactsChangedEventArgs.Changes">
+<summary>
+ Returns set of artefacts that are changed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``5(``0)">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.
+</summary>
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``4(``0)">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.       
+</summary>
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``3(``0)">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.        
+</summary>
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``2(``0)">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.
+</summary>
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``1(``0)">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.
+</summary>
+</member>
+<member name="M:Angara.Hosting.HostService.ResultOf``1(``0,Angara.WorkExpression.Artefact[],Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Method,System.Guid})">
+<summary>
+ Asynchronously returns method&apos;s output artefacts.
+ Fails, if the method is in a scope.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IAlterMethodOps.SetValue(System.Guid,System.Int32,System.Int32,System.Object)">
+<summary>
+ Assigns a constant value to the given input array&apos;s element 
+</summary>
+</member>
+<member name="M:Angara.Hosting.IAlterMethodOps.SetValue(System.Guid,System.Int32,System.Object)">
+<summary>
+ Assigns a constant value to the given input 
+</summary>
+</member>
+<member name="M:Angara.Hosting.IAlterMethodOps.RemoveInput(System.Guid,System.Int32,System.Int32)">
+<summary>
+ Removes an element from the given input array&apos;s element.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IAlterWorkStructureOps.ReplaceValue(System.Guid,System.Object)">
+<summary>
+ Replaces an existing artefact produced by a &apos;make value&apos;.
+ Existing &apos;make value&apos; is removed; all depending methods are connected to 
+ the new &apos;make value&apos;.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IAlterWorkStructureOps.Connect(System.Guid,System.Int32,System.Guid,System.Int32)">
+<summary>
+ Throws an exception if ports cannot be connected.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IArtefactOps.remove_Changed(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.ArtefactsChangedEventArgs})">
+<summary>
+ Occurs when new version of an artefact is available at some port or port is removed.
+</summary>
+</member>
+<member name="P:Angara.Hosting.IArtefactOps.Changed">
+<summary>
+ Occurs when new version of an artefact is available at some port or port is removed.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IArtefactOps.add_Changed(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.ArtefactsChangedEventArgs})">
+<summary>
+ Occurs when new version of an artefact is available at some port or port is removed.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IArtefactOps.IsValue(Microsoft.FSharp.Collections.FSharpList{System.Guid},System.Int32)">
+<summary>
+ Returns a value indicating whether the artefact is an output of &apos;make value&apos; method.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Hosting.IArtefactOps">
+<summary>
+ Allows to watch for ports of all methods of a work and perform queries against an artefact of a port.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IExecutionOps.Stop(System.Guid)">
+<summary>
+ Stops a method if it is running (stops all running slices, if method is a vector).
+ Nothing happens if it is not running.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IExecutionOps.Start(System.Guid)">
+<summary>
+ Starts a method.
+ All slices of a vector method are expected to be startable and all are started in this case, returned value is true; 
+ otherwise, nothing happens, and returned value is false.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IMethodOps.remove_StatusChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodStatusChangedEventArgs})">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.remove_ProgressChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodProgress})">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.remove_InputChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodInputChangedEventArgs})">
+<summary>
+ Occurs when method&apos;s input is disconnected or connected.
+</summary>
+</member>
+<member name="P:Angara.Hosting.IMethodOps.StatusChanged">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="P:Angara.Hosting.IMethodOps.ProgressChanged">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="P:Angara.Hosting.IMethodOps.InputChanged">
+<summary>
+ Occurs when method&apos;s input is disconnected or connected.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.add_StatusChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodStatusChangedEventArgs})">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.add_ProgressChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodProgress})">
+<summary>
+ Occurs when execution status of a method changes.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.add_InputChanged(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.MethodInputChangedEventArgs})">
+<summary>
+ Occurs when method&apos;s input is disconnected or connected.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IMethodOps.GetInput(Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Guid,Microsoft.FSharp.Collections.FSharpList{System.Int32}}},System.Int32,System.String,System.Object[])">
+<summary>
+ Performs a query for all artefact(s) of the given input port and returns its result as an array of objects, one for each input artefact of the port.
+ Parameters:
+ 1) Port is an input port of a method, which can be both scalar or array port.
+ 2) Index of a slice if the method is a vector; use List.empty for scalar method.
+ 3) Query name is a method of an artefact to be queried. If null, returns entire artefact.
+ 4) Query arguments is an array of objects with types and length depending on a query.
+ Remarks:
+ - If the port value is collected from multiple artefacts (i.e. T --&gt; T[]), the query is applied to each of the input artefact.
+ Result is an array of individual query outputs.
+ - Otherwise, the port value is a single artefact.
+ -- If artefact is an array, the query is performed for each element of the array (if query is null, returns elements themselves).
+ -- Else, artefact is not an array, the query is applied and result has single element.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IMethodOps.FitSlice(Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.Guid,Microsoft.FSharp.Collections.FSharpList{System.Int32}}})">
+<summary>
+ Fits given slice in the bounds of the method
+ Returns two arrays: first with correct slice and second with ranges of each individual component
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Hosting.IWorkStructureOps.remove_Changed(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.WorkStructureChangedEventArgs})">
+<summary>
+ Vertices have been added, removed, connected or disconnected.
+</summary>
+</member>
+<member name="P:Angara.Hosting.IWorkStructureOps.Changed">
+<summary>
+ Vertices have been added, removed, connected or disconnected.
+</summary>
+</member>
+<member name="M:Angara.Hosting.IWorkStructureOps.add_Changed(Microsoft.FSharp.Control.FSharpHandler{Angara.Hosting.WorkStructureChangedEventArgs})">
+<summary>
+ Vertices have been added, removed, connected or disconnected.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Hosting.Helpers">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Hosting.ops">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.IndexOps.addDimensionRange(System.Int32,Microsoft.FSharp.Collections.FSharpList{System.Int32})">
+<summary>
+ Extends vector space with new dimension of the given size and
+ returns all indices of the extended space those are fixed in the original space to the given index.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.IndexOps.union(System.Collections.Generic.IEnumerable{Microsoft.FSharp.Collections.FSharpList{System.Int32}})">
+<summary>
+ Filters index collection by removing duplicate indices and indices 
+ such that there is another index starting with given.
+</summary>
+</member>
+<member name="T:Angara.IndexOps">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.MdVector">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.MethodExecutionTracing">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Naming.Name(Angara.Graph.MethodVertex,System.String,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,System.String})">
+<summary>
+ Takes proposed suffix and if resulting names are not unique, automatically changes the suffix by adding numbers (1), (2), … until the result is unique.
+</summary>
+</member>
+<member name="M:Angara.Naming.TryName(Angara.Graph.MethodVertex,System.String,Microsoft.FSharp.Collections.FSharpMap{Angara.Graph.MethodVertex,System.String})">
+<summary>
+ Takes proposed suffix and if resulting names of a method and all its output artefacts are not unique, returns None; otherwise new suffix is stored.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Naming.parseSuffix(System.String)">
+<summary>
+ Returns basic part of a suffix (i.e. without &quot;(1)&quot; at the end),
+ and index given in the suffix (0 if there is no index).
+ Never returns null as basic suffix (but can return empty string).
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Naming">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Observable.SuspendableObservable`1">
+<summary>
+ Decorates an observable to enable suspending of message propagation.
+ When it is suspended, it stops propagation of posted messages to the decorated source.
+ When resumed, it sends all accumulated suspended messages to the decorated source and 
+ enables propagation.
+ Each writer for an instance of this class must be linear. The order of messages of 
+ each writer only is guaranteed.
+ The only one suspender/resumer is allowed. Multiple suspends and resumes are ignored (the
+ first one works).
+ Initially it is suspended.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Queries.Reflection">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Serialization.ArtefactSerializer">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Serialization.Configuration">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Serialization.HostInterfaces">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Serialization.HostingGraphSerialization">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Serialization.TypeResolver">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Serialization.WorkSerializer.serializeGraph``2(Microsoft.FSharp.Core.FSharpFunc{System.Tuple{``0,Microsoft.FSharp.Collections.FSharpList{``1}},Angara.Serialization.InfoSet},Angara.Graph.DirectedAcyclicGraph{``0,``1})">
+<summary>
+ Serializes workflow graph in topological order so vertex is serialized only when all its dependencies are serialized
+ Serializer function takes vertex and its input edges
+</summary>
+</member>
+<member name="T:Angara.Serialization.WorkSerializer">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Trace">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Tree">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.Utils.zipFst``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})">
+<summary>
+ Combines the two sequences into a sequence of pairs. 
+ The two sequences need not have equal lengths: the output sequence has as much items as the first sequence; if second is shorted, missing values are replaced with None.
+</summary>
+</member>
+<member name="M:Angara.Utils.zipAny``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})">
+<summary>
+ Combines the two sequences into a sequence of pairs. 
+ The two sequences need not have equal lengths: when one sequence is exhausted any remaining elements in the other sequence are passed with None instead of missing items.
+</summary>
+</member>
+<member name="M:Angara.Utils.jaggedRank(System.Type)">
+<summary>
+ Returns rank&gt;0, if t is an array (e.g. rank of &apos;a[][] is 2),
+ returns 0 if t is not an array. 
+ NB: returns 0 if t is a multidimensional (&gt;1) array.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.Utils">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkAPI.Outcome`1">
+<summary>
+ Evaluation outcome
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkAPI.ops">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.Work`1">
+<summary>
+ Composition of methods that can be composed to a WorkGraph, and an evaluation target, which can be computed somehow from the WorkGraph.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.Artefact`1">
+<summary>
+ A typed reference to an output of a method.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.Output">
+<summary>
+ A method output.
+</summary>
+</member>
+<member name="T:Angara.WorkExpression.Artefact.ScatterItem">
+<summary>
+ Artefact represents an item of a scattered array-artefact.
+</summary>
+</member>
+<member name="T:Angara.WorkExpression.Artefact.Collection">
+<summary>
+ Artefact is a result of &quot;collect&quot; function, i.e. represents a virtual array-artefact collected from a sequence of artefacts.
+</summary>
+</member>
+<member name="T:Angara.WorkExpression.Artefact.Single">
+<summary>
+ Artefact is an output of a method.
+</summary>
+</member>
+<member name="M:Angara.WorkExpression.Artefact.ToString">
+<summary>
+ Represents a typed artefact of a work expression that can be evaluated into a value of certain type.
+</summary>
+</member>
+<member name="T:Angara.WorkExpression.Artefact">
+<summary>
+ An untyped reference to an output of a method.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.Method">
+<summary>
+ Represents a method which takes and produces artefacts, and can be evaluated.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.WorkExpression.eval``1(Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``0})">
+<summary>
+ Asynchronously evaluates result of a computation expression.
+ If the expression imports artefacts taken from a snapshot (see &apos;take&apos;, &apos;import&apos;),
+ evaluation will not include running of already completed methods.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.WorkExpression.foreach2``3(Angara.WorkExpression.Artefact{``0[]},Angara.WorkExpression.Artefact{``1[]},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{Angara.WorkExpression.Artefact{``0},Angara.WorkExpression.Artefact{``1}},System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``2}}})">
+<summary>
+ Creates a work which evaluates the given body function for each item of the given vector.
+</summary>
+</member>
+<member name="M:Angara.WorkExpression.foreach``2(Angara.WorkExpression.Artefact{``0[]},Microsoft.FSharp.Core.FSharpFunc{Angara.WorkExpression.Artefact{``0},System.Tuple{Microsoft.FSharp.Collections.FSharpList{Angara.WorkExpression.Method},Angara.WorkExpression.Artefact{``1}}})">
+<summary>
+ Creates a work which evaluates the given body function for each item of the given vector.
+</summary>
+</member>
+<member name="M:Angara.WorkExpression.collect``1(Angara.WorkExpression.Artefact{``0}[])">
+<summary>
+ Collects zero or more individual artefacts into an array-artefact.
+</summary>
+</member>
+<member name="P:Angara.WorkExpression.work">
+<summary>
+ Builds a strongly typed dependency graph from Angara methods using computation expression syntax.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="M:Angara.WorkExpression.makeValue``1(``0)">
+<summary>
+ Takes any value and generates a work expression that evaluates to this value.
+</summary>
+</member>
+<member name="M:Angara.WorkExpression.value``1(``0)">
+<summary>
+ Converts any value into an artefact without binding it to an identifier.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.NewMethod">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.Import">
+
+</member>
+<member name="M:Angara.WorkExpression.FrameworkContracts.id``1(Angara.WorkExpression.Artefact{``0})">
+<summary>
+ Generates an expression which translates the given artefact as is.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Angara.WorkExpression.FrameworkContracts">
+
+</member>
+<member name="T:Angara.WorkExpression">
+<summary>
+ Holds types and functions for creating and evaluating work expressions.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Array">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Async">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:List">
+
+</member>
+</members>
+</doc>

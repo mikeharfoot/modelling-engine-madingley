@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="angara.serialization" type="Angara.Serialization.ConfigFile.SerializationSection, Angara"/>
+    <section name="baikal" type="Baikal.Configuration.BaikalSection, Baikal"/>
+  </configSections>
+  <angara.serialization>
+    <methods>
+      <add contract="Angara.Methods.ImportFile.ImportFile" assembly="Angara.Methods.ImportFile"/>
+      <add contract="Angara.Methods.CompileFSharp.compileFsContract" assembly="Angara.Methods.CompileFSharp"/>
+      <add contract="Angara.Methods.MakeData.MakeData" assembly="Angara.Methods.MakeData"/>
+      <add contract="Angara.Methods.MakeChart.MakeChart" assembly="Angara.Methods.MakeChart"/>
+    </methods>
+    <artefacts>
+      <add registerAction="Angara.Methods.MakeChart.RegisterSerializers" assembly="Angara.Methods.MakeChart"/>
+      <add registerAction="Angara.Methods.ImportFile.RegisterSerializers" assembly="Angara.Methods.ImportFile"/>
+      <add registerAction="Angara.Artefacts.FSharp.Serialization.Register" assembly="Angara.Artefacts.FSharp"/>
+      <add registerAction="Angara.Artefacts.Assembly.Serialization.Register" assembly="Angara.Artefacts.Assembly"/>
+      <add registerAction="Angara.Methods.MakeData.RegisterSerializers" assembly="Angara.Methods.MakeData"/>
+    </artefacts>
+  </angara.serialization>
+  <baikal>
+    <webUI>
+      <add assembly="Angara.Common.WebUI"/>
+    </webUI>
+  </baikal>
+</configuration>

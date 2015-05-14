@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="angara.serialization" type="Angara.Serialization.ConfigFile.SerializationSection, Angara"/>
+    <section name="baikal" type="Baikal.Configuration.BaikalSection, Baikal"/>
+  </configSections>
+  <angara.serialization>
+    <artefacts>
+      <add registerAction="Angara.Serialization.TableSerializer.Register" assembly="Angara.ComputeRuntime"/>
+      <add registerAction="Angara.Serialization.ForeignContentSerializer.Register" assembly="Angara.ComputeRuntime"/>
+    </artefacts>
+  </angara.serialization>
+  <baikal>
+    <webUI>
+      <add assembly="Angara.Core.WebUI"/>
+    </webUI>
+  </baikal>
+</configuration>

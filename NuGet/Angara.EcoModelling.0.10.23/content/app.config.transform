@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="angara.serialization" type="Angara.Serialization.ConfigFile.SerializationSection, Angara"/>
+    <section name="baikal" type="Baikal.Configuration.BaikalSection, Baikal"/>
+  </configSections>
+  <angara.serialization>
+    <methods>
+      <add contract="Angara.Methods.ImportGEMConfiguration.Contract" assembly="Angara.Methods.ImportGEMConfiguration" />
+      <add contract="Angara.Methods.ImportGEMEnvironment.Contract" assembly="Angara.Methods.ImportGEMEnvironment" />
+      <add contract="Angara.Methods.RunGEM.Contract" assembly="Angara.Methods.RunGEM" />
+    </methods>
+    <artefacts>
+      <add registerAction="Angara.Artefacts.GEMConfiguration.GEMConfiguration.Register" assembly="Angara.Artefacts.GEMConfiguration" />
+      <add registerAction="Angara.Artefacts.GEMEnvironment.GEMEnvironment.Register" assembly="Angara.Artefacts.GEMEnvironment" />
+    </artefacts>
+  </angara.serialization>
+  <baikal>
+    <webUI>
+      <add assembly="Angara.EcoModelling.WebUI"/>
+    </webUI>
+  </baikal>
+</configuration>
